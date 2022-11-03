@@ -26,6 +26,8 @@ class Client:
         gui_thread.start()
         receive_thread.start()
 
+        self.sock.send("a".encode('utf-8'))
+
     def gui_loop(self):
         self.win = tkinter.Tk()
         self.win.configure(bg="lightgray")

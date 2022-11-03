@@ -35,14 +35,14 @@ def receive():
         client, address = server.accept()
         print(f"connected with {str(address)}")
 
-        client.send("NICK".encode('utf-8'))
+        # client.send("NICK".encode('utf-8'))
         nickname = client.recv(1024)
 
         nicknames.append(nickname)
         clients.append(client)
 
         print(f"El nombre del cliente es {nickname}")
-        broadcast(f"{nickname} se conectó al servidor\n".encode('utf-8'))
+        # broadcast(f"{nickname} se conectó al servidor\n".encode('utf-8'))
         client.send("conectado al servidor".encode('utf-8'))
 
         thread = threading.Thread(target=handle, args=(client,))
