@@ -4,7 +4,10 @@ import tkinter
 import tkinter.scrolledtext
 from tkinter import simpledialog
 
-HOST = '127.0.0.1'
+hostip = tkinter.Tk()
+hostip.withdraw()
+
+HOST = simpledialog.askstring("Host", "Escriba la direccion IP del host", parent=hostip)
 PORT = 9090
 
 class Client:
